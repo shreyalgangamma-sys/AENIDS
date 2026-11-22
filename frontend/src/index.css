@@ -1,0 +1,430 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@300;400;600;700&display=swap');
+
+:root {
+  /* Cyberpunk Palette */
+  --bg-main: #05050f;
+  --bg-card: rgba(13, 17, 33, 0.6); /* Glass effect */
+  --text-main: #e2e8f0;
+  --text-muted: #8b9bb4;
+  
+  /* Neon Accents */
+  --accent-cyan: #00f3ff;
+  --accent-purple: #bd00ff;
+  --accent-success: #00ff88;
+  --accent-warning: #ffb800;
+  --accent-danger: #ff003c;
+  
+  --border-glow: rgba(0, 243, 255, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #05050f;
+  /* Animated Grid */
+  background-image: 
+    linear-gradient(rgba(0, 243, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 243, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  /* The animation that makes it move */
+  animation: gridMovement 10s linear infinite;
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+@keyframes gridMovement {
+  0% { background-position: 0 0; }
+  100% { background-position: 40px 40px; }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-main); }
+::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent-cyan); }
+
+/* Glassmorphism Cards */
+.card {
+  background: var(--bg-card);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: var(--border-glow);
+  box-shadow: 0 0 20px rgba(0, 243, 255, 0.1);
+}
+
+/* Futuristic Neon Buttons */
+/* Futuristic Neon Buttons */
+.cyber-btn {
+  padding: 12px 24px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  font-weight: 600;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  z-index: 1; /* Creates a layer for the text */
+}
+
+/* The glowing background layer */
+.cyber-btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  opacity: 0.1;
+  transition: opacity 0.3s ease;
+  z-index: -1; /* Pushes the background BEHIND the text */
+}
+
+/* Green Button */
+.btn-green { color: var(--accent-success); border-color: var(--accent-success); text-shadow: 0 0 5px rgba(0, 255, 136, 0.5); }
+.btn-green::before { background: var(--accent-success); }
+.btn-green:hover { box-shadow: 0 0 15px var(--accent-success); color: #000; text-shadow: none; }
+.btn-green:hover::before { opacity: 1; }
+
+/* Yellow Button */
+.btn-yellow { color: var(--accent-warning); border-color: var(--accent-warning); text-shadow: 0 0 5px rgba(255, 184, 0, 0.5); }
+.btn-yellow::before { background: var(--accent-warning); }
+.btn-yellow:hover { box-shadow: 0 0 15px var(--accent-warning); color: #000; text-shadow: none; }
+.btn-yellow:hover::before { opacity: 1; }
+
+/* Red Button */
+.btn-red { color: var(--accent-danger); border-color: var(--accent-danger); text-shadow: 0 0 5px rgba(255, 0, 60, 0.5); }
+.btn-red::before { background: var(--accent-danger); }
+.btn-red:hover { box-shadow: 0 0 15px var(--accent-danger); color: #fff; text-shadow: 0 0 5px #000; }
+.btn-red:hover::before { opacity: 1; }
+
+/* Cyan Button */
+.btn-cyan { color: var(--accent-cyan); border-color: var(--accent-cyan); text-shadow: 0 0 5px rgba(0, 243, 255, 0.5); }
+.btn-cyan::before { background: var(--accent-cyan); }
+.btn-cyan:hover { box-shadow: 0 0 15px var(--accent-cyan); color: #000; text-shadow: none; }
+.btn-cyan:hover::before { opacity: 1; }
+/* =========================================
+   🧭 ELEVATED CYBERPUNK SIDEBAR
+   ========================================= */
+.sidebar {
+  width: 280px;
+  background: rgba(10, 15, 30, 0.7); /* Deep translucent glass */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  height: 100vh;
+  padding: 32px 20px;
+  border-right: 1px solid rgba(0, 243, 255, 0.15);
+  position: fixed;
+  left: 0; top: 0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 5px 0 30px rgba(0, 0, 0, 0.6);
+  z-index: 100;
+}
+
+/* Add this to the top with your other @imports */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Share+Tech+Mono&family=Inter:wght@300;400;600;700&display=swap');
+
+/* ... keep the rest of your css ... */
+
+/* Replace your old .sidebar-logo with this */
+/* =========================================
+   🚀 ULTIMATE CYBERPUNK LOGO STYLES
+   ========================================= */
+.sidebar-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding: 12px 16px;
+  background: rgba(0, 243, 255, 0.03);
+  border: 1px solid rgba(0, 243, 255, 0.2);
+  border-left: 3px solid var(--accent-cyan);
+  /* Angular sci-fi cut on the bottom right */
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+  box-shadow: inset 0 0 20px rgba(0, 243, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.sidebar-logo-container:hover {
+  background: rgba(0, 243, 255, 0.08);
+  border-color: var(--accent-cyan);
+  box-shadow: inset 0 0 20px rgba(0, 243, 255, 0.1), 0 0 15px rgba(0, 243, 255, 0.2);
+}
+
+.sidebar-logo-text {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  display: flex;
+  gap: 6px;
+  margin: 0;
+}
+
+.logo-text-1 {
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+/* Animated Glowing Gradient Text */
+.logo-text-2 {
+  background: linear-gradient(90deg, #00f3ff, #bd00ff, #00f3ff);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 3s linear infinite;
+  filter: drop-shadow(0 0 5px rgba(0, 243, 255, 0.5));
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+.sidebar-subtitle {
+  color: var(--text-muted);
+  font-size: 10px;
+  margin-bottom: 40px;
+  font-family: 'Share Tech Mono', monospace;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sidebar-subtitle::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 1px;
+  background: var(--text-muted);
+  opacity: 0.5;
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nav-item {
+  padding: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border: 1px solid transparent;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  text-align: left;
+  width: 100%;
+}
+
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(0, 243, 255, 0.2);
+  transform: translateX(5px);
+}
+
+.nav-item.active {
+  background: linear-gradient(90deg, rgba(0, 243, 255, 0.15) 0%, transparent 100%);
+  border-radius: 0 8px 8px 0;
+}
+
+/* The glowing neon left-bar for the active item */
+.nav-item.active::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4px;
+  background: var(--accent-cyan);
+  box-shadow: 0 0 15px var(--accent-cyan);
+}
+
+.nav-label {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--text-muted);
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-item.active .nav-label {
+  color: #fff;
+  text-shadow: 0 0 8px rgba(0, 243, 255, 0.5);
+}
+
+.nav-desc {
+  font-size: 11px;
+  color: var(--text-muted);
+  opacity: 0.6;
+  font-family: 'Share Tech Mono', monospace;
+  margin-left: 28px;
+}
+
+.nav-item.active .nav-desc {
+  color: var(--accent-cyan);
+  opacity: 1;
+}
+/* =========================================
+   📚 CYBERPUNK ENCYCLOPEDIA STYLES
+   ========================================= */
+.encyclopedia-container {
+  display: flex;
+  gap: 24px;
+  height: calc(100vh - 150px);
+}
+
+/* Left Side: Attack List */
+.attack-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.attack-item {
+  background: rgba(13, 17, 33, 0.6);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.attack-item:hover {
+  background: rgba(0, 243, 255, 0.05);
+  border-color: rgba(0, 243, 255, 0.4);
+  transform: translateX(5px);
+}
+
+.attack-item.active {
+  background: linear-gradient(90deg, rgba(0, 243, 255, 0.15) 0%, transparent 100%);
+  border-color: var(--accent-cyan);
+  border-left: 4px solid var(--accent-cyan);
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.1);
+}
+
+.attack-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.attack-name {
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.attack-item.active .attack-name {
+  color: var(--accent-cyan);
+  text-shadow: 0 0 8px rgba(0, 243, 255, 0.5);
+}
+
+.attack-category {
+  font-size: 11px;
+  font-family: 'Share Tech Mono', monospace;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+}
+
+/* Right Side: Detail Panel */
+.attack-detail {
+  flex: 2;
+  background: rgba(13, 17, 33, 0.8);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-y: auto;
+}
+
+.detail-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 16px;
+}
+
+.detail-title {
+  font-size: 28px;
+  color: #fff;
+  margin: 0;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.detail-description {
+  background: rgba(0, 0, 0, 0.3);
+  border-left: 3px solid var(--accent-cyan);
+  padding: 16px;
+  border-radius: 0 8px 8px 0;
+  color: #cbd5e1;
+  line-height: 1.6;
+  font-size: 15px;
+  margin-bottom: 32px;
+}
+
+.indicator-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.indicator-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 16px;
+  border-radius: 8px;
+  color: #e2e8f0;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.2s ease;
+}
+
+.indicator-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.indicator-icon {
+  color: var(--accent-warning);
+  font-weight: bold;
+}
